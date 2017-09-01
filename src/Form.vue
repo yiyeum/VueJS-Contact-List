@@ -59,7 +59,36 @@
                     this.name ='';
                     this.phone ='';
                     this.email = '';
+                    this.showAlert = true;
                 } // if
+
+                else if(this.name == '' && this.phone =='' && this.email ==''){
+
+                    this.alertMessage = "Please fill the inputs."
+                    this.showAlert = false;
+
+                } // else if - three inputs are empty
+
+                else if(this.name == ''){
+
+                    this.alertMessage = "Please fill the name."
+                    this.showAlert = false;
+
+                } // else if - name is empty
+
+                else if(this.phone == ''){
+
+                    this.alertMessage = "Please fill the phone number."
+                    this.showAlert = false;
+
+                } // else if - phone is empty
+
+                else if(this.email == ''){
+
+                    this.alertMessage = "Please fill the email."
+                    this.showAlert = false;
+
+                } // else if - email is empty
 
             } // addContact()
 
