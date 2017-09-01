@@ -1,33 +1,68 @@
 <template>
+    <div class="contactForm">
+        <div class="alert alert-warning text-center" role="alert" v-show="!showAlert">
+            <strong>Hey!</strong> {{alertMessage}}
+        </div>
+        <div v-for="list in contacts">
+            <ul>
+                <li>{{list}}</li>
+            </ul>
+        </div>
         <div class="row">
             <form class="col-md-3 contactForm" >
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter Name" v-model="name">
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="tel" class="form-control" id="phone" placeholder="Enter Phone number" v-model="phone">
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter Email" v-model="email">
-            </div>
-             <div class="text-center">
-                <button type="button" class="btn btn-info" v-on:click="addContact">Add</button>
-            </div>
-        </form>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter Name" v-model="name">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Enter Phone number" v-model="phone">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter Email" v-model="email">
+                </div>
+                 <div class="text-center">
+                    <button type="button" class="btn btn-info" v-on:click.prevent="addContact">Add</button>
+                </div>
+            </form>
+        </div>
     </div>
 </template>
 
 <script>
+
     export default{
+
         data:function(){
             return{
                 name:"",
                 phone:"",
-                email:""
+                email:"",
+                contacts:[],
+                showAlert:true,
+                alertMessage:""
             }
+        },
+
+        methods:{
+
+            addContact:function(){
+
+                //check if the values are null.
+
+                if(this.name != '' && this.phone != '' && this.email!= '') {
+                    this.contacts.push("Name : " + this.name + " | Phone : " + this.phone + " | Email : " + this.email);
+
+                    //reset the data in input boxes.
+
+                    this.name ='';
+                    this.phone ='';
+                    this.email = '';
+                } // if
+
+            } // addContact()
+
         }
     }
 </script>
