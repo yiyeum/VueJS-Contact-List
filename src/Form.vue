@@ -4,7 +4,7 @@
                 <strong>Hey!</strong> {{alertMessage}}
             </div>
             <div class="displayContacts text-center">
-                <p v-for="list in contacts">&#9702; {{list}} &nbsp; &nbsp; <button type="button" class="btn btn-outline-secondary btn-sm">Delete</button></p>
+                <p v-for="list in contacts">&#9702; {{list}} &nbsp; &nbsp; <button type="button" class="btn btn-outline-secondary btn-sm" v-on:click="deleteList">Delete</button></p>
             </div>
             <div class="row">
                 <form class="col-md-3 contactForm" >
@@ -67,7 +67,12 @@
 
                 } // else if - three inputs are empty
 
-            } // addContact()
+            }, // addContact()
+
+            deleteList:function(){
+
+                this.contacts.pop();
+            }
 
         }
     }
@@ -82,5 +87,8 @@
         margin-bottom: 5%;
         font-size: 21px;
         font-weight: 200;
+    }
+    .btn{
+        cursor: pointer;
     }
 </style>
