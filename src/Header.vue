@@ -11,7 +11,7 @@
 <style>
     h2{
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        color: cadetblue;
+        color: #343a40;
         margin-top: 3%;
     }
 </style>

@@ -4,7 +4,7 @@
                 <strong>Hey!</strong> {{alertMessage}}
             </div>
             <div class="displayContacts text-center">
-                <p v-for="list in contacts">{{list}}</p>
+                <p v-for="list in contacts">&#9702; {{list}} &nbsp; &nbsp; <button type="button" class="btn btn-outline-secondary btn-sm">Delete</button></p>
             </div>
             <div class="row">
                 <form class="col-md-3 contactForm" >
@@ -21,7 +21,7 @@
                         <input type="email" class="form-control" id="email" placeholder="Enter Email" v-model="email">
                     </div>
                      <div class="text-center">
-                        <button type="button" class="btn btn-info" v-on:click.prevent="addContact">Add</button>
+                        <button type="button" class="btn btn-outline-success btn-block" v-on:click.prevent="addContact">Add</button>
                     </div>
                 </form>
             </div>
