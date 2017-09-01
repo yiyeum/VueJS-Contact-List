@@ -2,7 +2,7 @@
 
 * #### Purpose of this practice
      1. To try Vue with an Array.  
-     2. To apply on practical form. 
+     2. To apply on the practical form. 
      3. To improve my planning, searching, correcting errors skills with Vue.
      
 
