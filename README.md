@@ -1,18 +1,14 @@
-# contact-list
+# VueJS Practice : Contact List
 
-> Contact List Using VueJS
+* #### Purpose of this practice
+     1. To try Vue with an Array.  
+     2. To apply on practical form. 
+     3. To improve my planning, searching, correcting errors skills with Vue.
+     
 
-## Build Setup
+* #### Comment : 
+    I'm working on this project whenever I have time :) When it's completed, the screenshot will be uploaded with more detail explanation on this file.
 
-``` bash
-# install dependencies
-npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
 
-# build for production with minification
-npm run build
-```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Copyright © 2017 Kate Yeeum Lee
