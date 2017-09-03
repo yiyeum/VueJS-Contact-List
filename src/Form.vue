@@ -4,21 +4,26 @@
                 <strong>Hey!</strong> {{alertMessage}}
             </div>
             <div class="displayContacts text-center">
-                <p v-for="list in contacts">&#9702; {{list}} &nbsp; &nbsp; <button type="button" class="btn btn-outline-secondary btn-sm" v-on:click="deleteList">Delete</button></p>
+                <p v-for="(contact, index) in contacts">
+                <span>Name: {{contact.name}}</span>&#9702;&#9702;
+                    <span>Email: {{ contact.email }}</span>&#9702;&#9702;
+                    <span>Phone: {{contact.phone }}</span>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" v-on:click="deleteList(index)">Delete</button>
+                </p>
             </div>
             <div class="row">
                 <form class="col-md-3 contactForm" >
                     <div class="form-group">
                         <label for="name">Full Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter Name" v-model="name">
+                        <input type="text" class="form-control" id="name" placeholder="Enter Name" v-model="name" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input type="tel" class="form-control" id="phone" placeholder="Enter Phone number" v-model="phone">
+                        <input type="tel" class="form-control" id="phone" placeholder="Enter Phone number" v-model="phone" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter Email" v-model="email">
+                        <input type="email" class="form-control" id="email" placeholder="Enter Email" v-model="email" required>
                     </div>
                      <div class="text-center">
                         <button type="button" class="btn btn-outline-success btn-block" v-on:click.prevent="addContact">Add</button>
@@ -50,7 +55,7 @@
                 //check if the values are null.
 
                 if(this.name != '' && this.phone != '' && this.email!= '') {
-                    this.contacts.push("Name : " + this.name + " | Phone : " + this.phone + " | Email : " + this.email);
+                    this.contacts.push({name:  this.name, phone: this.phone , email: this.email});
 
                     //reset the data in input boxes.
 
@@ -69,9 +74,8 @@
 
             }, // addContact()
 
-            deleteList:function(){
-
-                this.contacts.pop();
+            deleteList:function(index){
+                this.contacts.splice(index, 1);
             }
 
         }
