@@ -5,9 +5,9 @@
             </div>
             <div class="displayContacts text-center">
                 <p v-for="(contact, index) in contacts">
-                <span>Name: {{contact.name}}</span>&#9702;&#9702;
-                    <span>Email: {{ contact.email }}</span>&#9702;&#9702;
-                    <span>Phone: {{contact.phone }}</span>
+                <span>&#9702; Name: {{contact.name}}</span>
+                    <span>&#9702; Email: {{ contact.email }}</span>
+                    <span>&#9702; Phone: {{contact.phone }}</span>
                     <button type="button" class="btn btn-outline-secondary btn-sm" v-on:click="deleteList(index)">Delete</button>
                 </p>
             </div>
