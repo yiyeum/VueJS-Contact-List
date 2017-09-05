@@ -1,6 +1,6 @@
 <template>
     <div>
-            <div class="alert alert-warning text-center" role="alert" v-show="!showAlert">
+            <div class="alert alert-warning text-center" role="alert" v-if="!showAlert">
                 <strong>Hey!</strong> {{alertMessage}}
             </div>
             <div class="displayContacts text-center">
